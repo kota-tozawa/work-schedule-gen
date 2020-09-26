@@ -62,3 +62,16 @@ pip install -r requirements.txt
 ```
 python work_schedule_gen/work_schedule_gen.py
 ```
+***
+
+# 勤務表生成手順（Windows 10）
+
+***
+[参考]
+https://qiita.com/Kodaira_/items/feadfef9add468e3a85b
+https://qiita.com/nsas454/items/c5bd3a535205d434234e
+https://note.nkmk.me/python-pip-install-requirements/
+
+https://pypi.org/project/xlrd2/
+https://pypi.org/project/xlwt-fix/
+https://pypi.org/project/xlutils/
