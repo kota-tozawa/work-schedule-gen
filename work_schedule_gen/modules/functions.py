@@ -1,19 +1,25 @@
 import sys
 from datetime import datetime
 
-def get_valid_input_name():
+def get_last_or_first_name(last_name: bool = True) -> str:
+    last_or_first_name = ''
+    if last_name == True:
+        last_or_first_name = '苗字'
+    else:
+        last_or_first_name = '名前'
+
     while True:
-        name = input('氏名を入力してください（例：野比のび太）：')
+        name = input('{last_or_first_name}を入力してください：'.format(last_or_first_name=last_or_first_name))
         if (name == ''):
-            print('氏名が未入力です。')
-            y_or_n = input('氏名を再入力しますか？[y/n]：')
+            print('{last_or_first_name}が未入力です。'.format(last_or_first_name=last_or_first_name))
+            y_or_n = input('{last_or_first_name}を再入力しますか？[y/n]：'.format(last_or_first_name=last_or_first_name))
             if (y_or_n == 'n'):
                 sys.exit()
         else:
             break
     return name
 
-def get_valid_input_date():
+def get_year_month() -> str:
     while True:
         try:
             date = input('作成したい勤務表の年月を入力してください（例：202009）：')
