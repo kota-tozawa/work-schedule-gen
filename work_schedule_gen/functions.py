@@ -3,7 +3,7 @@ from datetime import datetime
 
 def get_valid_input_name():
     while True:
-        name = input('氏名を入力してください（例：範馬勇次郎）：')
+        name = input('氏名を入力してください（例：野比のび太）：')
         if (name == ''):
             print('氏名が未入力です。')
             y_or_n = input('氏名を再入力しますか？[y/n]：')
