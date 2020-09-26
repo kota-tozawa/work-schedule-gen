@@ -16,17 +16,17 @@
 ```
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 ```
-1. 下記を`.zprofile`に書き込む。
+2. 下記を`.zprofile`に書き込む。
 （`vi ~/.zprofile`などで書き込んでください。`.zprofile`がホームディレクトリになければ作成してください。）
 ```
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 ```
-1. 下記を`.zshrc`に書き込む。
+3. 下記を`.zshrc`に書き込む。
 ```
 eval "$(pyenv init -)"
 ```
-1. 仮想環境用の python 3.5.0 をインストール。（使用するライブラリの関係上 python 3.5.0 を用います。）
+4. 仮想環境用の python 3.5.0 をインストール。（使用するライブラリの関係上 python 3.5.0 を用います。）
 ```
 pyenv install 3.5.0
 ```
@@ -37,41 +37,41 @@ pyenv install 3.5.0
 brew uninstall --ignore-dependencies openssl@1.1
 pyenv install 3.5.0
 ```
-1. 下記を実行し、pyenv のプラグイン「pyenv-virtualenv」を使えるようにする。
+5. 下記を実行し、pyenv のプラグイン「pyenv-virtualenv」を使えるようにする。
 ```
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
-1. 下記を`.zshrc`に書き込む。
+6. 下記を`.zshrc`に書き込む。
 ```
 eval "$(pyenv virtualenv-init -)"
 ```
-1. 仮想環境の作成。
+7. 仮想環境の作成。
 ```
 pyenv virtualenv 3.5.0 venv_3.5.0
 ```
-1. 仮想環境をアクティベート。
+8. 仮想環境をアクティベート。
 ```
 pyenv activate venv_3.5.0
 ```
-1. バージョンが`3.5.0`に切り替わったか確認。
+9. バージョンが`3.5.0`に切り替わったか確認。
 ```
 python --version
 ```
-1. 勤務表生成に必要なパッケージをインストール。
+10. 勤務表生成に必要なパッケージをインストール。
 ```
 pip install -r requirements.txt
 ```
-1. カレントディレクトリを`work_schedule_gen/modules`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+11. カレントディレクトリを`work_schedule_gen/modules`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```
 cd work_schedule_gen/modules
 python work_schedule_gen.py
 ```
-1.  `work_schedule_gen/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
-1.  仮想環境をディアクティベート。
+12.  `work_schedule_gen/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
+13.  仮想環境をディアクティベート。
 ```
 pyenv deactivate venv_3.5.0
 ```
-1.  次に生成する時は、`8.`,`10.`~`13.`の手順のみ行えば良い。
+14.  次に生成する時は、`8.`,`10.`~`13.`の手順のみ行えば良い。
 ***
 
 # 勤務表生成手順（Windows 10）
