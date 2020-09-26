@@ -17,6 +17,7 @@ def get_last_or_first_name(last_name: bool = True) -> str:
                 sys.exit()
         else:
             break
+
     return name
 
 def get_year_month() -> str:
@@ -34,4 +35,19 @@ def get_year_month() -> str:
             sys.exit()
         else:
             break
+
+    insert_string_to_base = lambda base_string, insert_point, insert_string : \
+    base_string[:insert_point] + insert_string + base_string[insert_point:]
+
+    date = insert_string_to_base(date, 4, '0') if len(date) == 5 else date
+
     return date
+
+def convert_year_month_to_year(year_month: str) -> str:
+    return year_month[0:4]
+
+def convert_year_month_to_month(year_month: str) -> str:
+    if (year_month[4] == '0'):
+        return year_month[5:6]
+    else:
+        return year_month[4:6]
