@@ -2,6 +2,7 @@ import sys
 from datetime import datetime
 
 def get_last_or_first_name(last_name: bool = True) -> str:
+    '''Set `last_name=False` to get first name'''
     last_or_first_name = ''
     if last_name == True:
         last_or_first_name = '苗字'
@@ -21,6 +22,7 @@ def get_last_or_first_name(last_name: bool = True) -> str:
     return name
 
 def get_year_month() -> str:
+    '''returns yyyymm string'''
     while True:
         try:
             date = input('作成したい勤務表の年月を入力してください（例：202009）：')
@@ -43,11 +45,36 @@ def get_year_month() -> str:
 
     return date
 
-def convert_year_month_to_year(year_month: str) -> str:
-    return year_month[0:4]
-
-def convert_year_month_to_month(year_month: str) -> str:
+def separate_year_month(year_month: str):
+    '''yyyymm -> yyyy, mm'''
+    year = year_month[0:4]
+    month = ''
     if (year_month[4] == '0'):
-        return year_month[5:6]
+        month = year_month[5:6]
     else:
-        return year_month[4:6]
+        month = year_month[4:6]
+
+    return year, month
+
+def _getOutCell(outSheet, colIndex, rowIndex):
+    """ Extract the internal xlwt cell representation. """
+    row = outSheet._Worksheet__rows.get(rowIndex)
+    if not row: return None
+
+    cell = row._Row__cells.get(colIndex)
+    return cell
+
+def setOutCell(outSheet, col, row, value):
+    """ Change cell value without changing formatting. """
+    # HACK to retain cell style.
+    previousCell = _getOutCell(outSheet, col, row)
+    # END HACK, PART I
+
+    outSheet.write(row, col, value)
+
+    # HACK, PART II
+    if previousCell:
+        newCell = _getOutCell(outSheet, col, row)
+        if newCell:
+            newCell.xf_idx = previousCell.xf_idx
+    # END HACK
