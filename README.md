@@ -6,12 +6,15 @@
 - `docker container run --name work-schedule-app -it -d k1038/work-schedule-gen:latest`
 - `docker ps`
 - `docker container exec -it work-schedule-app bash`
-- `docker container cp work-schedule-app:/app/generated/勤務表202010_aa.xls ~/`
-- `docker container stop work-schedule-app`
-- `docker container start work-schedule-app`
-***
-## 開発環境構築＆勤務表生成
+- `python main.py`
+- `exit`
+- `docker container cp work-schedule-app:/app/generated/勤務表$(入力した年月)_$(入力した苗字).xls ~/`
 
+- `docker container start work-schedule-app`
+- `docker container stop work-schedule-app`
+
+***
+## 開発環境構築＆勤務表生成（Mac OS X）
 [**事前にインストールしておくもの**]
 - Git
 - Docker
@@ -21,7 +24,7 @@
 
 [**注意**]
 下記手順では、`python 3.5.0`の仮想環境を導入します。
-また、すでにインストールしてあるならば、`pyenv`, `pyenv-virtualenv`のインストール手順はスキップして大丈夫です。
+すでにインストールしてあるならば、`pyenv`, `pyenv-virtualenv`のインストール手順はスキップして大丈夫です。
 
 1. zsh で下記を実行し、Pythonの実行環境を管理するツール「pyenv」を使えるようにする。
 （普段 bash を使っているなら bash をベースに下記手順を行っても大丈夫です。）
