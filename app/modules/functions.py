@@ -26,7 +26,7 @@ def get_year_month() -> str:
     '''Returns yyyymm string'''
     while True:
         try:
-            date = input('作成したい勤務表の年月を入力してください（例：202009）：')
+            date = input('作成したい勤務表の年月を入力してください（例：201903）：')
             datetime.strptime(date, '%Y%m')
         except ValueError:
             print('不正な年月が入力されました。')
@@ -57,7 +57,7 @@ def separate_year_month(year_month: str) -> Tuple[str, str]:
 
     return year, month
 
-def get_out_cell(out_sheet, col_index, row_index):
+def _get_out_cell(out_sheet, col_index, row_index):
     """ Extract the internal xlwt cell representation. """
     row = out_sheet._Worksheet__rows.get(row_index)
     if not row: return None
@@ -67,9 +67,9 @@ def get_out_cell(out_sheet, col_index, row_index):
 
 def set_out_cell(out_sheet, col, row, value):
     """ Change cell value without changing formatting. """
-    previous_cell = get_out_cell(out_sheet, col, row)
+    previous_cell = _get_out_cell(out_sheet, col, row)
     out_sheet.write(row, col, value)
     if previous_cell:
-        new_cell = get_out_cell(out_sheet, col, row)
+        new_cell = _get_out_cell(out_sheet, col, row)
         if new_cell:
             new_cell.xf_idx = previous_cell.xf_idx

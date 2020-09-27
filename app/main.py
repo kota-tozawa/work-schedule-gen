@@ -18,9 +18,12 @@ first_week_day, month_days_num = calendar.monthrange(int(year), int(month)) # ca
 template_file = str(Path('./template.xls'))
 wb = open_workbook(template_file, formatting_info=True, on_demand=True)
 wb_copy = copy(wb)
-wb_copy.get_sheet(0).write(2, 7, '氏名：' + full_name)
+out_sheet = wb_copy.get_sheet(0)
+set_out_cell(out_sheet, 2, 7, '氏名：' + full_name) # .write(2, 7, '氏名：' + full_name)
+
 
 # 保存
 file_name = '勤務表{year_month}_{last_name}.xls'.format(year_month=year_month, last_name=last_name)
 file_path = str(Path('./generated') / file_name)
 wb_copy.save(file_path)
+print('勤務表の作成に成功しました。')
