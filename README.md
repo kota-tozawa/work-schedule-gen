@@ -1,12 +1,16 @@
 ***
 ## 勤務表生成手順（Docker）
 - Docker、Git をインストール。
-今は仮、自分用
+### 今は仮の自分用手順
 - `docker build --tag k1038/work-schedule-gen:latest .`
-- `docker container run -d -p 9000:8080 k1038/work-schedule-gen:latest`
-- `docker ps -a`
+- `docker container run --name work-schedule-app -it -d k1038/work-schedule-gen:latest`
+- `docker ps`
+- `docker container exec -it work-schedule-app bash`
+- `docker container cp work-schedule-app:/app/generated/勤務表202010_aa.xls ~/`
+- `docker container stop work-schedule-app`
+- `docker container start work-schedule-app`
 ***
-## 開発環境構築
+## 開発環境構築＆勤務表生成
 
 [**事前にインストールしておくもの**]
 - Git
