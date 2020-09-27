@@ -182,4 +182,7 @@ dmypy.json
 .pyre/
 
 # VSCode
-settings.json
+/.vscode/
+
+# ignore generated xls files
+/generated/
