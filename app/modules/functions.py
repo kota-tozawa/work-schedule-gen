@@ -26,7 +26,7 @@ def get_year_month() -> str:
     '''Returns yyyymm string.'''
     while True:
         try:
-            date = input('作成したい勤務表の年月を入力してください（例：201903）：')
+            date = input('作成したい勤務表の年月を入力してください（例：202009, 20209）：')
             datetime.strptime(date, '%Y%m')
         except ValueError:
             print('不正な年月が入力されました。')

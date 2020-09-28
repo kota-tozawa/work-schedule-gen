@@ -1,6 +1,7 @@
 ***
 ## 勤務表生成手順
-- Docker、Git をインストール。
+### 事前にインストールしておくもの
+- Docker
 ### 今は仮の自分用手順
 - `docker build --tag k1038/work-schedule-gen:latest .`
 - `docker container run --name work-schedule-app -it -d k1038/work-schedule-gen:latest`
@@ -76,12 +77,12 @@ $ python --version
 ```zsh
 $ pip install -r requirements.txt
 ```
-11. カレントディレクトリを`work_schedule_gen/modules`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+11. カレントディレクトリを`work-schedule-gen/app/modules`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
-$ cd work_schedule_gen/modules
+$ cd app/modules/
 $ python main.py
 ```
-12. `work_schedule_gen/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
+12. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
 13. 仮想環境をディアクティベート。
 ```zsh
 $ pyenv deactivate venv_3.5.0

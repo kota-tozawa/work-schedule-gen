@@ -185,4 +185,4 @@ dmypy.json
 /.vscode/
 
 # ignore generated xls files
-/generated/
+app/generated
