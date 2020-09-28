@@ -75,7 +75,7 @@ $ python --version
 ```
 10. 勤務表生成に必要なパッケージをインストール。
 ```zsh
-$ pip install -r requirements.txt
+$ pip install -r requirements.lock
 ```
 11. カレントディレクトリを`work-schedule-gen/app/modules`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
@@ -88,21 +88,3 @@ $ python main.py
 $ pyenv deactivate venv_3.5.0
 ```
 14. 次に生成する時は、`8.`,`10.`~`13.`の手順のみ行えば良い。
-***
-[参考]
-
-- https://qiita.com/Kodaira_/items/feadfef9add468e3a85b
-- https://qiita.com/nsas454/items/c5bd3a535205d434234e
-- https://note.nkmk.me/python-pip-install-requirements/
-
-- https://xlrd.readthedocs.io/en/latest/api.html
-- https://xlutils.readthedocs.io/en/latest/
-
-***
-### 参考
-- https://qiita.com/Kodaira_/items/feadfef9add468e3a85b
-- https://qiita.com/nsas454/items/c5bd3a535205d434234e
-- https://note.nkmk.me/python-pip-install-requirements/
-
-- https://xlrd.readthedocs.io/en/latest/api.html
-- https://xlutils.readthedocs.io/en/latest/
