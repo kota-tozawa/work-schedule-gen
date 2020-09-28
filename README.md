@@ -15,23 +15,23 @@
 
 ***
 ## ローカルで開発環境構築＆勤務表生成（Mac OS X）
-### 事前にインストールしておくもの]
+### 事前にインストールしておくもの
 - Git
 - Docker
 - Visual Studio Code などのエディタ
-- （必要に応じて）Homebrew
+- （必要に応じて）Homebrew \
 （`pyenv`, `pyenv-virtualenv`は Homebrew を用いてインストールすることもできます。）
 
 ### 注意
-下記手順では、`python 3.5.0`の仮想環境を導入します。
+下記手順では、`python 3.5.0`の仮想環境を導入します。\
 すでにインストールしてあるならば、`pyenv`, `pyenv-virtualenv`のインストール手順はスキップして大丈夫です。
 
-1. zsh で下記を実行し、Pythonの実行環境を管理するツール「pyenv」を使えるようにする。
+1. zsh で下記を実行し、Pythonの実行環境を管理するツール「pyenv」を使えるようにする。\
 （普段 bash を使っているなら bash をベースに下記手順を行っても大丈夫です。）
 ```zsh
 $ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 ```
-2. 下記を`.zprofile`に書き込む。
+2. 下記を`.zprofile`に書き込む。\
 （`vi ~/.zprofile`などで書き込んでください。`.zprofile`がホームディレクトリになければ作成してください。）
 ```zsh
 export PYENV_ROOT="$HOME/.pyenv"
@@ -45,14 +45,14 @@ eval "$(pyenv init -)"
 ```zsh
 $ pyenv install 3.5.0
 ```
-[**インストール中に`Ignoring ensurepip failure: pip 7.1.2 requires SSL/TLS`というエラーが発生したら**]
+#### インストール中に`Ignoring ensurepip failure: pip 7.1.2 requires SSL/TLS`というエラーが発生したら
 
 下記を実行したのち、再度`pyenv install 3.5.0`を実行してください：
 ```zsh
 $ brew uninstall --ignore-dependencies openssl@1.1
 $ pyenv install 3.5.0
 ```
-5. 下記を実行し、pyenv のプラグイン「pyenv-virtualenv」を使えるようにする。
+5. 下記を実行し、pyenv のプラグイン pyenv-virtualenv を使えるようにする。
 ```zsh
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
