@@ -8,7 +8,7 @@
 - `docker container exec -it work-schedule-app bash`
 - `python main.py`
 - `exit`
-- `docker container cp work-schedule-app:/app/generated/勤務表$(入力した年月)_$(入力した苗字).xls ~/`
+- `docker container cp work-schedule-app:/app/generated/. ~/`
 
 - `docker container start work-schedule-app`
 - `docker container stop work-schedule-app`
