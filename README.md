@@ -19,7 +19,7 @@
 ### 事前にインストールしておくもの
 - Git
 - Docker
-- Visual Studio Code などのエディタ
+- Visual Studio Code
 - （必要に応じて）Homebrew \
 （`pyenv`, `pyenv-virtualenv`は Homebrew を用いてインストールすることもできます。）
 
@@ -27,6 +27,7 @@
 下記手順では、`python 3.5.0`の仮想環境を導入します。\
 すでにインストールしてあるならば、`pyenv`, `pyenv-virtualenv`のインストール手順はスキップして大丈夫です。
 
+### 開発環境構築手順
 1. zsh で下記を実行し、Pythonの実行環境を管理するツール「pyenv」を使えるようにする。\
 （普段 bash を使っているなら bash をベースに下記手順を行っても大丈夫です。）
 ```zsh
@@ -77,19 +78,23 @@ $ python --version
 ```zsh
 $ pip install -r requirements.lock
 ```
-11. （**VSCodeの場合のみ**）コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
-12.  カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+### 勤務表生成手順
+1. コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
+2. カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
 $ cd app
 $ python main.py
 ```
-13. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
-14. 仮想環境をディアクティベート。
+3. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
+4. 仮想環境をディアクティベート。
 ```zsh
 $ pyenv deactivate venv_3.5.0
 ```
-#### メモ
-VSCodeで拡張機能「Pylance」を入れて開発する際、`.vscode/settings.json`に`"python.analysis.extraPaths"`を加えればエラー`reportMissingImports`が消える。
+#### VSCodeで開発する際必要な設定
+- コード自動整形ツールは、「flake8」を用いる。下記サイトを参考に導入 \
+  （「flake8のエラーチェックでpycodestyle(pep8)の1行文字数制限を外す」は行う）
+https://qiita.com/psychoroid/items/2c2acc06c900d2c0c8cb
+- VSCodeで拡張機能「Pylance」を入れて開発する際、`.vscode/settings.json`に`"python.analysis.extraPaths"`を加えればエラー`reportMissingImports`が消える。
 ```json
 {
     "python.pythonPath": "your/path/to/python3.5",

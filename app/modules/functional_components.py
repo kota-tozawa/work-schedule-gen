@@ -2,25 +2,30 @@ import sys
 from datetime import datetime
 from typing import Tuple
 
+
 def get_last_or_first_name(last_name: bool = True) -> str:
     '''Set `last_name=False` to get first name.'''
     last_or_first_name = ''
-    if last_name == True:
+    if last_name is True:
         last_or_first_name = '苗字'
     else:
         last_or_first_name = '名前'
 
     while True:
-        name = input('{last_or_first_name}を入力してください：'.format(last_or_first_name=last_or_first_name))
+        name = input('{last_or_first_name}を入力してください：'.format(
+            last_or_first_name=last_or_first_name))
         if (name == ''):
-            print('{last_or_first_name}が未入力です。'.format(last_or_first_name=last_or_first_name))
-            y_or_n = input('{last_or_first_name}を再入力しますか？[y/n]：'.format(last_or_first_name=last_or_first_name))
+            print('{last_or_first_name}が未入力です。'.format(
+                last_or_first_name=last_or_first_name))
+            y_or_n = input(
+                '{last_or_first_name}を再入力しますか？[y/n]：'.format(last_or_first_name=last_or_first_name))
             if (y_or_n == 'n'):
                 sys.exit()
         else:
             break
 
     return name
+
 
 def get_year_month() -> str:
     '''Returns yyyymm string.'''
@@ -39,12 +44,13 @@ def get_year_month() -> str:
         else:
             break
 
-    insert_string_to_base = lambda base_string, insert_point, insert_string : \
-    base_string[:insert_point] + insert_string + base_string[insert_point:]
+    def insert_string_to_base(base_string, insert_point, insert_string):
+        return base_string[:insert_point] + insert_string + base_string[insert_point:]
 
     date = insert_string_to_base(date, 4, '0') if len(date) == 5 else date
 
     return date
+
 
 def separate_year_month(year_month: str) -> Tuple[str, str]:
     '''yyyymm -> yyyy, mm'''
