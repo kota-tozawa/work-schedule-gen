@@ -48,13 +48,12 @@ eval "$(pyenv init -)"
 $ pyenv install 3.5.0
 ```
 #### インストール中に`Ignoring ensurepip failure: pip 7.1.2 requires SSL/TLS`というエラーが発生したら
-
-下記を実行したのち、再度`pyenv install 3.5.0`を実行してください：
+下記を実行してください：
 ```zsh
 $ brew uninstall --ignore-dependencies openssl@1.1
 $ pyenv install 3.5.0
 ```
-5. 下記を実行し、pyenv のプラグイン pyenv-virtualenv を使えるようにする。
+1. 下記を実行し、pyenv のプラグイン pyenv-virtualenv を使えるようにする。
 ```zsh
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
@@ -66,7 +65,7 @@ eval "$(pyenv virtualenv-init -)"
 ```zsh
 $ pyenv virtualenv 3.5.0 venv_3.5.0
 ```
-8. 仮想環境をアクティベート。
+8. 仮想環境をアクティベート（ディアクティベート：`pyenv deactivate venv_3.5.0`）。
 ```zsh
 $ pyenv activate venv_3.5.0
 ```
@@ -78,18 +77,16 @@ $ python --version
 ```zsh
 $ pip install -r requirements.lock
 ```
+11. コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
+
 ### 勤務表生成手順
-1. コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
-2. カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+1. カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
 $ cd app
 $ python main.py
 ```
-3. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
-4. 仮想環境をディアクティベート。
-```zsh
-$ pyenv deactivate venv_3.5.0
-```
+2. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
+
 #### VSCodeで開発する際必要な設定
 - コード自動整形ツールは、「flake8」を用いる。下記サイトを参考に導入 \
   （「flake8のエラーチェックでpycodestyle(pep8)の1行文字数制限を外す」は行う）

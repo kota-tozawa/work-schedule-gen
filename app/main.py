@@ -34,7 +34,6 @@ for i in range(month_days_num):
     dt = Date(day, week_day, holiday_flg)
     date_list.append(dt)
 
-
 # 書式情報
 # フォント
 font_normal = Font()
@@ -65,7 +64,8 @@ out_sheet = wb_copy.get_sheet(0)
 # タイトルに年月をセット
 set_out_cell(out_sheet, 0, 0, tmp_year_month_day)
 # 氏名をセット
-out_sheet.write(2, 7, '氏名：' + full_name, style_normal)
+out_sheet.write(2, 7, '氏名：{full_name}'.format(
+    full_name=full_name), style_normal)
 # 日付・曜日をセット
 for dt in date_list:
     # 日付
@@ -83,17 +83,7 @@ for dt in date_list:
         out_sheet.write(
             row, col, week_day, style_normal)
 
-    # 日付
-    # out_sheet.write(6 + i, 0, i + 1, style_normal)
-    # 曜日
-    # if WEEK_DAYS[(first_week_day + i) % 7] in ['土', '日']:
-    #     out_sheet.write(
-    #         6 + i, 1, WEEK_DAYS[(first_week_day + i) % 7], style_red)
-    # else:
-    #     out_sheet.write(
-    #         6 + i, 1, WEEK_DAYS[(first_week_day + i) % 7], style_normal)
-
-    # 保存
+# 保存
 file_name = '勤務表{year_month}_{last_name}.xls'.format(
     year_month=year_month, last_name=last_name)
 file_path = str(Path('./generated') / file_name)
