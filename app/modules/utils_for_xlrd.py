@@ -1,5 +1,5 @@
 def _get_out_cell(out_sheet, row_index, col_index,):
-    """ Extract the internal xlwt cell representation. """
+    ''' Extract the internal xlwt cell representation. '''
     row = out_sheet._Worksheet__rows.get(row_index)
     if not row: return None
     cell = row._Row__cells.get(col_index)
@@ -7,7 +7,7 @@ def _get_out_cell(out_sheet, row_index, col_index,):
     return cell
 
 def set_out_cell(out_sheet, row, col, value):
-    """ Change cell value without changing formatting. """
+    ''' Change cell value without changing formatting. '''
     previous_cell = _get_out_cell(out_sheet, col, row)
     out_sheet.write(row, col, value)
     if previous_cell:

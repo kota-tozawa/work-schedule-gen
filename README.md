@@ -77,21 +77,24 @@ $ python --version
 ```zsh
 $ pip install -r requirements.lock
 ```
-11.  カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+11. （**VSCodeの場合のみ**）コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
+12.  カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
 $ cd app
 $ python main.py
 ```
-12. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
-13. 仮想環境をディアクティベート。
+13. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
+14. 仮想環境をディアクティベート。
 ```zsh
 $ pyenv deactivate venv_3.5.0
 ```
-#### 補遺
-VSCodeで拡張機能「Pylance」を入れて、開発する場合、`app`と同階層の`.vscode`ディレクトリ内に、
-`settings.json`を作成し、その中に下記のような記述をすれば`reportMissingImports`が消える。
+#### メモ
+VSCodeで拡張機能「Pylance」を入れて開発する際、`.vscode/settings.json`に`"python.analysis.extraPaths"`を加えればエラー`reportMissingImports`が消える。
 ```json
 {
-    "python.analysis.extraPaths": ["app"],
+    "python.pythonPath": "your/path/to/python3.5",
+    "python.analysis.extraPaths": [
+        "app"
+    ],
 }
 ```
