@@ -77,9 +77,9 @@ $ python --version
 ```zsh
 $ pip install -r requirements.lock
 ```
-11. カレントディレクトリを`work-schedule-gen/app/modules`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+1.  カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
-$ cd app/modules/
+$ cd app
 $ python main.py
 ```
 12. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
