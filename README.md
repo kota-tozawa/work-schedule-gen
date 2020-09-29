@@ -77,7 +77,7 @@ $ python --version
 ```zsh
 $ pip install -r requirements.lock
 ```
-1.  カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
+11.  カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
 ```zsh
 $ cd app
 $ python main.py
@@ -87,4 +87,11 @@ $ python main.py
 ```zsh
 $ pyenv deactivate venv_3.5.0
 ```
-14. 次に生成する時は、`8.`,`10.`~`13.`の手順のみ行えば良い。
+#### 補遺
+VSCodeで拡張機能「Pylance」を入れて、開発する場合、`app`と同階層の`.vscode`ディレクトリ内に、
+`settings.json`を作成し、その中に下記のような記述をすれば`reportMissingImports`が消える。
+```json
+{
+    "python.analysis.extraPaths": ["app"],
+}
+```
