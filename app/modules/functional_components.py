@@ -1,6 +1,5 @@
 import sys
 from datetime import datetime
-from typing import Tuple
 
 
 def get_last_or_first_name(last_name: bool = True) -> str:
@@ -50,15 +49,3 @@ def get_year_month() -> str:
     date = insert_string_to_base(date, 4, '0') if len(date) == 5 else date
 
     return date
-
-
-def separate_year_month(year_month: str) -> Tuple[str, str]:
-    '''yyyymm -> yyyy, mm'''
-    year = year_month[0:4]
-    month = ''
-    if (year_month[4] == '0'):
-        month = year_month[5:6]
-    else:
-        month = year_month[4:6]
-
-    return year, month

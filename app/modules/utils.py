@@ -1,5 +1,38 @@
 from datetime import datetime
+from typing import Tuple
 import jpholiday
+
+
+def separate_year_month(year_month: str) -> Tuple[str, str]:
+    '''yyyymm -> yyyy, mm'''
+    year = year_month[0:4]
+    month = ''
+    if (year_month[4] == '0'):
+        month = year_month[5:6]
+    else:
+        month = year_month[4:6]
+
+    return year, month
+
+
+def zero_padding(value: str):
+    '''e.g.) 7 -> 07, 19 -> 19'''
+    return '0' + value if len(value) == 1 else value
+
+
+def to_year_month_day(year: str, month_padded: str, day_padded: str) -> str:
+    '''yyyy, mm, day(1~31) -> yyyymmdd'''
+
+    return year + month_padded + day_padded
+
+
+def is_holiday(str_date: str) -> bool:
+    '''Determines if yyyymmdd is a holiday or not'''
+    date = datetime.strptime(str_date, '%Y%m%d')
+    if date.weekday() >= 5 or jpholiday.is_holiday(date):
+        return True
+    else:
+        return False
 
 
 def _get_out_cell(out_sheet, row_index, col_index,):
@@ -20,12 +53,3 @@ def set_out_cell(out_sheet, row, col, value):
         new_cell = _get_out_cell(out_sheet, col, row)
         if new_cell:
             new_cell.xf_idx = previous_cell.xf_idx
-
-
-def is_holiday(date: str) -> bool:
-    '''Determines if yyyymmdd is a national holiday or not'''
-    Date = datetime.date(int(date[0:4]), int(date[4:6]), int(date[6:8]))
-    if Date.weekday() >= 5 or jpholiday.is_holiday(Date):
-        return True
-    else:
-        return False
