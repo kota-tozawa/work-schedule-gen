@@ -1,4 +1,12 @@
+autopep8
+flake8
+importlib-metadata
 jpholiday
+mccabe
+pycodestyle
+pyflakes
+toml
 xlrd
 xlutils
 xlwt
+zipp
