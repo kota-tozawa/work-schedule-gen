@@ -1,6 +1,5 @@
 FROM python:3.5-slim-buster
-COPY requirements.lock .
-RUN pip3 install -r requirements.lock \
-    && mkdir app
-WORKDIR /app
-COPY app .
+WORKDIR /work-schedule-gen
+COPY . .
+RUN pip3 install -r requirements.lock
+WORKDIR /work-schedule-gen/app
