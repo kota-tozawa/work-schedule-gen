@@ -2,7 +2,7 @@
 ## 勤務表生成手順
 ### 事前にインストールしておくもの
 - Docker
-### 今は仮の自分用手順
+### TODO 今は仮の自分用手順
 - `docker build --tag k1038/work-schedule-gen:latest .`
 - `docker container run --name work-schedule-app -it -d k1038/work-schedule-gen:latest`
 - `docker ps`
@@ -27,7 +27,7 @@
 下記手順では、`python 3.5.0`の仮想環境を導入します。\
 すでにインストールしてあるならば、`pyenv`, `pyenv-virtualenv`のインストール手順はスキップして大丈夫です。
 
-### 開発環境構築手順
+### 開発環境構築手順（TODO シェルスクリプトでまとめられるとこはまとめて実行させるようにする。）
 1. zsh で下記を実行し、Pythonの実行環境を管理するツール「pyenv」を使えるようにする。\
 （普段 bash を使っているなら bash をベースに下記手順を行っても大丈夫です。）
 ```zsh
