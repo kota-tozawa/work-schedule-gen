@@ -1,5 +1,6 @@
 import sys
 from datetime import datetime
+from modules.utils import insert_string_to_base
 
 
 def get_last_or_first_name(last_name: bool = True) -> str:
@@ -43,9 +44,7 @@ def get_year_month() -> str:
         else:
             break
 
-    def insert_string_to_base(base_string, insert_point, insert_string):
-        return base_string[:insert_point] + insert_string + base_string[insert_point:]
-
-    date = insert_string_to_base(date, 4, '0') if len(date) == 5 else date
+    date = insert_string_to_base(
+        date, 4, '0') if len(date) == 5 else date
 
     return date

@@ -3,6 +3,10 @@ from typing import Tuple
 import jpholiday
 
 
+def insert_string_to_base(base_string, insert_point, insert_string):
+    return base_string[:insert_point] + insert_string + base_string[insert_point:]
+
+
 def separate_year_month(year_month: str) -> Tuple[str, str]:
     '''yyyymm -> yyyy, mm'''
     year = year_month[0:4]
