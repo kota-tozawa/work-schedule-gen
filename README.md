@@ -84,7 +84,7 @@ $ pip install -r requirements.lock
 ```zsh
 $ git clone https://github.com/kota-tozawa/work-schedule-gen.git
 ```
-12. VSCodeで「フォルダを開く」でクローンしたディレククトリを開いた後、コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
+12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後、コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
 
 ### 勤務表生成手順
 1. カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
