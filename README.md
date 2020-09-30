@@ -53,7 +53,7 @@ $ pyenv install 3.5.0
 $ brew uninstall --ignore-dependencies openssl@1.1
 $ pyenv install 3.5.0
 ```
-1. 下記を実行し、pyenv のプラグイン pyenv-virtualenv を使えるようにする。
+5. 下記を実行し、pyenv のプラグイン pyenv-virtualenv を使えるようにする。
 ```zsh
 $ git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 ```
