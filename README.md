@@ -77,7 +77,11 @@ $ python --version
 ```zsh
 $ pip install -r requirements.lock
 ```
-11. コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
+11. 下記を実行しレポジトリをクローンする。
+```zsh
+$ git clone https://github.com/kota-tozawa/work-schedule-gen.git
+```
+12. VSCodeで「フォルダを開く」でクローンしたディレククトリを開いた後、コマンドパレットを開き、そこに`>python`と入れ、「Python: Select Interpreter」を選択し、「Python 3.5.0 64-bit (venv_3.5.0)」を選択。
 
 ### 勤務表生成手順
 1. カレントディレクトリを`work-schedule-gen/app`にしてから、対話型のpythonスクリプトを実行し、目的の年月の勤務表を生成。
@@ -87,7 +91,7 @@ $ python main.py
 ```
 2. `app/generated`に生成されたファイルがあるので、好きな場所に移動・コピーしても良いし、`generated`に置いたまま記入してもOKです。その場合は、同じ年月の勤務表を生成して上書きしないよう気をつけてください。
 
-#### VSCodeで開発する際必要な設定
+### VSCodeで開発する際必要な設定
 - コード自動整形ツールは、「flake8」を用いる。下記サイトを参考に導入 \
   （「flake8のエラーチェックでpycodestyle(pep8)の1行文字数制限を外す」は行う）
 https://qiita.com/psychoroid/items/2c2acc06c900d2c0c8cb
@@ -96,7 +100,7 @@ https://qiita.com/psychoroid/items/2c2acc06c900d2c0c8cb
 {
     "python.pythonPath": "your/path/to/python3.5",
     "python.analysis.extraPaths": [
-        "app"
+        "app",
     ],
 }
 ```
