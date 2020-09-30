@@ -26,7 +26,7 @@ def zero_padding(value: str) -> str:
 
 
 def to_year_month_day(year: str, month_padded: str, day_padded: str) -> str:
-    '''yyyy, mm, day(1~31) -> yyyymmdd'''
+    '''yyyy, mm, dd -> yyyymmdd'''
 
     return year + month_padded + day_padded
 
