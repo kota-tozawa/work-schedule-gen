@@ -11,8 +11,11 @@
 - `exit`
 - `docker container cp work-schedule-app:/app/generated/. ~/`
 
-- `docker container start work-schedule-app`
 - `docker container stop work-schedule-app`
+- `docker container start work-schedule-app`
+
+- `docker rm work-schedule-app`
+- `docker rmi -f k1038/work-schedule-gen`
 
 ***
 ## ローカルで開発環境構築＆勤務表生成（Mac OS X）
