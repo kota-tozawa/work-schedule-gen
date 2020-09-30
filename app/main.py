@@ -3,12 +3,11 @@ from pathlib import Path
 from xlrd import open_workbook
 from xlwt import Font, Alignment, Borders, Formula, XFStyle
 from xlutils.copy import copy
+from modules.constants import WEEK_DAYS
 from modules.functional_components import get_last_or_first_name, get_year_month
 from modules.utils import separate_year_month, zero_padding, to_year_month_day, is_holiday, set_out_cell
 from modules.classes import Date
 
-
-WEEK_DAYS = ['月', '火', '水', '木', '金', '土', '日']
 
 # 氏名
 last_name = get_last_or_first_name()
@@ -69,7 +68,7 @@ out_sheet.write(2, 7, '氏名：{full_name}'.format(
 # 日付・曜日をセット
 for dt in date_list:
     # 日付
-    row = 6 + dt.get_day()
+    row = 5 + dt.get_day()
     col = 0
     day = dt.get_day()
     out_sheet.write(row, col, day, style_normal)
