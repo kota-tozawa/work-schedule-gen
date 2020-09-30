@@ -3,7 +3,8 @@ from typing import Tuple
 import jpholiday
 
 
-def insert_string_to_base(base_string, insert_point, insert_string):
+def insert_string_to_base(base_string, insert_point, insert_string) -> str:
+    '''e.g.) 'ABCFG', 3, 'DE' ->  'ABCDEFG' '''
     return base_string[:insert_point] + insert_string + base_string[insert_point:]
 
 
@@ -19,7 +20,7 @@ def separate_year_month(year_month: str) -> Tuple[str, str]:
     return year, month
 
 
-def zero_padding(value: str):
+def zero_padding(value: str) -> str:
     '''e.g.) 7 -> 07, 19 -> 19'''
     return '0' + value if len(value) == 1 else value
 
