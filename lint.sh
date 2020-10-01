@@ -6,7 +6,10 @@
 # 1行文字数制限は無視（F401,E501）
 echo "全てのPythonスクリプトを整形中..."
 autopep8 --in-place --aggressive --aggressive --ignore errors=F401,E501 app/*.py
-autopep8 --in-place --aggressive --aggressive --ignore errors=F401,E501 app/modules/*.py
+autopep8 --in-place --aggressive --aggressive --ignore errors=F401,E501 app/components/atoms/*.py
+autopep8 --in-place --aggressive --aggressive --ignore errors=F401,E501 app/components/molecules/*.py
+autopep8 --in-place --aggressive --aggressive --ignore errors=F401,E501 app/components/organisms/*.py
+autopep8 --in-place --aggressive --aggressive --ignore errors=F401,E501 app/components/processes/*.py
 echo "整形が完了しました。"
 
 echo "全てのPythonスクリプトのフォーマットの問題点を検出中..."
