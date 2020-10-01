@@ -2,7 +2,7 @@ import calendar
 from pathlib import Path
 from xlrd import open_workbook
 from xlutils.copy import copy
-from modules.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_GREY, STYLE_RED_GREY
+from modules.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_GREY, STYLE_RED_GREY, STYLE_BLUE_GREY
 from modules.classes import Date
 from modules.constants import WEEK_DAYS
 from modules.functional_components import get_last_or_first_name, get_year_month
@@ -24,6 +24,7 @@ month_padded = zero_padding(month)
 
 # 祝日含む休日判定用の日付リスト
 date_list = []
+grey_row_list = []
 for i in range(month_days_num):
     day = i + 1
     day_padded = zero_padding(str(day))
@@ -58,9 +59,15 @@ for dt in date_list:
     if dt.get_holiday_flg() is True:
         out_sheet.write(
             row, col, week_day, STYLE_RED_GREY)
+        grey_row_list.append(row)
     else:
         out_sheet.write(
             row, col, week_day, STYLE_BLACK_WHITE)
+# 休日・祝日の行に背景灰色のセルをセット
+for row in grey_row_list:
+    for col in range(2, 8):
+        out_sheet.write(row, col, '', STYLE_BLUE_GREY)
+
 
 # 保存
 file_name = '勤務表{year_month}_{last_name}.xls'.format(

@@ -8,6 +8,9 @@ font_black.name = u'HG正楷書体-PRO'
 font_red = Font()
 font_red.name = u'HG正楷書体-PRO'
 font_red.colour_index = 0x0A
+font_blue = Font()
+font_blue.name = u'HG正楷書体-PRO'
+font_blue.colour_index = 0x0C
 # アラインメント
 alignment = Alignment()
 alignment.horz = Alignment.HORZ_CENTER
@@ -15,7 +18,7 @@ alignment.vert = Alignment.VERT_CENTER
 # セルの背景色
 pattern_grey = Pattern()
 pattern_grey.pattern = Pattern.SOLID_PATTERN
-pattern_grey.pattern_fore_colour = 0x15
+pattern_grey.pattern_fore_colour = 0x49
 # 黒文字白背景のスタイル
 STYLE_BLACK_WHITE = XFStyle()
 STYLE_BLACK_WHITE.font = font_black
@@ -30,3 +33,8 @@ STYLE_RED_GREY = XFStyle()
 STYLE_RED_GREY.font = font_red
 STYLE_RED_GREY.alignment = alignment
 STYLE_RED_GREY.pattern = pattern_grey
+# 青文字灰色背景のスタイル
+STYLE_BLUE_GREY = XFStyle()
+STYLE_BLUE_GREY.font = font_blue
+STYLE_BLUE_GREY.alignment = alignment
+STYLE_BLUE_GREY.pattern = pattern_grey
