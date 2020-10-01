@@ -2,11 +2,12 @@ import calendar
 from pathlib import Path
 from xlrd import open_workbook
 from xlutils.copy import copy
-from modules.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_GREY, STYLE_RED_GREY, STYLE_BLUE_GREY
-from modules.classes import Date
-from modules.constants import WEEK_DAYS
-from modules.functional_components import get_last_or_first_name, get_year_month
-from modules.utils import separate_year_month, zero_padding, to_year_month_day, is_holiday, set_out_cell
+from components.atoms.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_GREY, STYLE_RED_GREY, STYLE_BLUE_GREY, STYLE_BLACK_WHITE_NO_BORDERS
+from components.atoms.constants import WEEK_DAYS
+from components.molecules.classes import Date
+from components.molecules.functions import separate_year_month, zero_padding, to_year_month_day, is_holiday, set_out_cell
+from components.organisms.get_name import get_last_or_first_name
+from components.organisms.get_year_month import get_year_month
 
 
 # 氏名
@@ -45,7 +46,7 @@ out_sheet = wb_copy.get_sheet(0)
 set_out_cell(out_sheet, 0, 0, tmp_year_month_day)
 # 氏名をセット
 out_sheet.write(2, 7, '氏名：{full_name}'.format(
-    full_name=full_name), STYLE_BLACK_WHITE)
+    full_name=full_name), STYLE_BLACK_WHITE_NO_BORDERS)
 # 日付・曜日をセット
 for dt in date_list:
     # 日付
@@ -67,7 +68,6 @@ for dt in date_list:
 for row in grey_row_list:
     for col in range(2, 8):
         out_sheet.write(row, col, '', STYLE_BLUE_GREY)
-
 
 # 保存
 file_name = '勤務表{year_month}_{last_name}.xls'.format(
