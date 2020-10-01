@@ -14,7 +14,6 @@ def to_hex_int(hex_str: str) -> int:
 
 # xlwtで利用可能な色を一括表示する用のスタイル
 style_test_list = []
-hex_list = []
 # 0x0(0)から0xff(256)までの色
 for i in range(256):
     hex_str = hex(i)
@@ -26,7 +25,6 @@ for i in range(256):
     style_test = XFStyle()
     style_test.pattern = pattern_test
     style_test_list.append(style_test)
-    hex_list.append(hex_int)
 
 # 色表示用xlsファイル
 wb_test = Workbook()
