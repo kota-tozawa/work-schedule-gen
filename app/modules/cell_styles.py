@@ -1,6 +1,9 @@
 from xlwt import Font, Alignment, Pattern, Borders, Formula, XFStyle, Style
 
 
+# xlwtで使用可能な色の一覧
+# https://docs.google.com/spreadsheets/d/1ihNaZcUh7961yU7db1-Db0lbws4NT24B7koY8v8GHNQ/pubhtml?gid=1072579560&single=true
+
 # 書式情報
 # フォント
 font_black = Font()
