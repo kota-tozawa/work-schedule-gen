@@ -2,7 +2,7 @@ import calendar
 from pathlib import Path
 from xlrd import open_workbook
 from xlutils.copy import copy
-from components.atoms.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_GREY, STYLE_RED_GREY, STYLE_BLUE_GREY, STYLE_BLACK_WHITE_NO_BORDERS
+from components.atoms.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_WHITE_NO_BORDERS, STYLE_BLACK_GREY, STYLE_BLUE_GREY, STYLE_RED_GREY
 from components.atoms.constants import WEEK_DAYS
 from components.molecules.classes import Date
 from components.molecules.functions import separate_year_month, zero_padding, to_year_month_day, is_holiday, set_out_cell
