@@ -15,6 +15,7 @@ if ["$result" -eq ""]
 then
   echo "問題点は見つかりませんでした。"
 else
-  echo "フォーマットの問題が検出されました："
+  echo "フォーマットの問題が検出されました。"
+  echo "整理された問題点は以下の通りです："
   echo "$result"
 fi
