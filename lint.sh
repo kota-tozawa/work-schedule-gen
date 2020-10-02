@@ -3,13 +3,12 @@
 # work-schedule-genディレクトリ以下（appディレクトリと同じ階層）をカレントディレクトリにしてから実行
 #
 
-# 1行文字数制限は無視（F401,E501）
+# Pythonコーディング規約PEP8
+# https://pep8.readthedocs.io/en/release-1.7.x/intro.html
+
 echo "全てのPythonスクリプトを整形中..."
-autopep8 --in-place --aggressive --aggressive app/*.py
-autopep8 --in-place --aggressive --aggressive app/components/atoms/*.py
-autopep8 --in-place --aggressive --aggressive app/components/molecules/*.py
-autopep8 --in-place --aggressive --aggressive app/components/organisms/*.py
-autopep8 --in-place --aggressive --aggressive app/components/processes/*.py
+autopep8 --in-place --recursive --ignore errors=F401,E501 app
+autopep8 --in-place --recursive --select=E226,E24 app
 echo "整形が完了しました。"
 
 echo "全てのPythonスクリプトのフォーマットの問題点を検出中..."
