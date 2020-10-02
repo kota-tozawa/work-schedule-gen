@@ -1,6 +1,10 @@
 from components.atoms.constants import WEEK_DAYS
 from components.molecules.classes import Date
-from components.molecules.functions import zero_padding, to_year_month_day, is_holiday
+from components.molecules.functions import (
+    zero_padding,
+    to_year_month_day,
+    is_holiday
+)
 
 
 def get_holiday_list(month_days_num: int, first_week_day: int, year: str, month_padded: str) -> list:

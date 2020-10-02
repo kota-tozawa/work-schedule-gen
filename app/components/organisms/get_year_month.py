@@ -20,7 +20,6 @@ def get_year_month() -> str:
         else:
             break
 
-    date = insert_string_to_base(
-        date, 4, '0') if len(date) == 5 else date
+    date = insert_string_to_base(date, 4, '0') if len(date) == 5 else date
 
     return date

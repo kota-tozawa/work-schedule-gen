@@ -40,7 +40,7 @@ def is_holiday(str_date: str) -> bool:
         return False
 
 
-def _get_out_cell(out_sheet, row_index, col_index,):
+def _get_out_cell(out_sheet, row_index, col_index):
     ''' Extract the internal xlwt cell representation. '''
     row = out_sheet._Worksheet__rows.get(row_index)
     if not row:

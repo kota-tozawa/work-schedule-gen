@@ -1,6 +1,12 @@
 from typing import Any
 from components.molecules.functions import set_out_cell
-from components.atoms.cell_styles import STYLE_BLACK_WHITE, STYLE_BLACK_WHITE_NO_BORDERS, STYLE_BLUE_GREY, STYLE_RED_GREY
+from components.atoms.cell_styles import (
+    STYLE_BLACK_WHITE,
+    STYLE_BLACK_WHITE_NO_BORDERS,
+    STYLE_BLUE_GREY,
+    STYLE_RED_GREY,
+    STYLE_RIGHT_BORDER
+)
 
 
 def set_cells(wb_copy: Any, tmp_year_month_day: str, full_name: str, date_list: list) -> None:
@@ -33,3 +39,8 @@ def set_cells(wb_copy: Any, tmp_year_month_day: str, full_name: str, date_list: 
     for row in grey_row_list:
         for col in range(2, 8):
             out_sheet.write(row, col, '', STYLE_BLUE_GREY)
+
+    # 一番右の枠線が表示されない事象の対応
+    for row in range(4, 38):
+        col = 9
+        out_sheet.write(row, col, '', STYLE_RIGHT_BORDER)

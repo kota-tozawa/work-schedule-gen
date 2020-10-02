@@ -37,3 +37,8 @@ STYLE_RED_GREY = easyxf(
     'align: vert centre, horiz center;'
     'pattern: pattern solid, fore_colour grey25;'
     'borders: left thin, right thin, top thin, bottom thin;')
+
+# 表の一番右の枠線を表示するためのスタイル
+STYLE_RIGHT_BORDER = easyxf(
+    'borders: left thin;'
+)
