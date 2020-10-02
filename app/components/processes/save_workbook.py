@@ -2,7 +2,12 @@ from typing import Any
 from pathlib import Path
 
 
-def save_workbook(wb_copy: Any, last_name: str, year_month: str, year: str, month: str) -> None:
+def save_workbook(
+        wb_copy: Any,
+        last_name: str,
+        year_month: str,
+        year: str,
+        month: str) -> None:
     file_name = '勤務表{year_month}_{last_name}.xls'.format(
         year_month=year_month, last_name=last_name)
     file_path = str(Path('./generated') / file_name)

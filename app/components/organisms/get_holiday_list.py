@@ -7,7 +7,11 @@ from components.molecules.functions import (
 )
 
 
-def get_holiday_list(month_days_num: int, first_week_day: int, year: str, month_padded: str) -> list:
+def get_holiday_list(
+        month_days_num: int,
+        first_week_day: int,
+        year: str,
+        month_padded: str) -> list:
     date_list = []
     for i in range(month_days_num):
         day = i + 1

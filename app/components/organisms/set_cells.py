@@ -9,7 +9,11 @@ from components.atoms.cell_styles import (
 )
 
 
-def set_cells(wb_copy: Any, tmp_year_month_day: str, full_name: str, date_list: list) -> None:
+def set_cells(
+        wb_copy: Any,
+        tmp_year_month_day: str,
+        full_name: str,
+        date_list: list) -> None:
     # ワークブック（template.xls）の一番最初のシートを取得
     out_sheet = wb_copy.get_sheet(0)
     # タイトルに年月をセット

@@ -5,7 +5,8 @@ import jpholiday
 
 def insert_string_to_base(base_string, insert_point, insert_string) -> str:
     '''e.g.) 'ABCFG', 3, 'DE' ->  'ABCDEFG' '''
-    return base_string[:insert_point] + insert_string + base_string[insert_point:]
+    return base_string[:insert_point] + \
+        insert_string + base_string[insert_point:]
 
 
 def separate_year_month(year_month: str) -> Tuple[str, str]:
