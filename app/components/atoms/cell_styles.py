@@ -55,3 +55,8 @@ STYLE_RED_GREY = easyxf(
 STYLE_RIGHT_BORDER = easyxf(
     'borders: left thin;'
 )
+
+# TODO 実働時間合計用の白文字, 白背景スタイル
+STYLE_WHITE_WHITE = easyxf(
+    'font: color white'
+)

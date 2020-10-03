@@ -3,6 +3,7 @@ from components.atoms.formulas import (
     SUM_WORKING_HOURS,
     SUM_OVERTIME_HOURS,
     SUM_WORKING_DAYS,
+    DISPLAY_WORKING_HOURS,
     CALC_WORKING_HOURS
 )
 from components.molecules.functions import set_out_cell
@@ -12,7 +13,8 @@ from components.atoms.cell_styles import (
     STYLE_BLACK_WHITE_BIGGER,
     STYLE_BLUE_GREY,
     STYLE_RED_GREY,
-    STYLE_RIGHT_BORDER
+    STYLE_RIGHT_BORDER,
+    STYLE_WHITE_WHITE
 )
 
 
@@ -68,7 +70,11 @@ def set_cells(
     # 残業時間合計
     out_sheet.write(38, 6, SUM_OVERTIME_HOURS, STYLE_BLACK_WHITE)
     # 日々の実働時間計算
-    for i, f in enumerate(CALC_WORKING_HOURS):
+    for i, f in enumerate(DISPLAY_WORKING_HOURS):
         row = i + 6
         col = 5
         out_sheet.write(row, col, f, STYLE_BLACK_WHITE)
+    for i, f in enumerate(CALC_WORKING_HOURS):
+        row = i + 6
+        col = 13
+        out_sheet.write(row, col, f, STYLE_WHITE_WHITE)
