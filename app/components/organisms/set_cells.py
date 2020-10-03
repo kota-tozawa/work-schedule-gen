@@ -4,7 +4,9 @@ from components.atoms.formulas import (
     SUM_OVERTIME_HOURS,
     SUM_WORKING_DAYS,
     DISPLAY_WORKING_HOURS,
-    CALC_WORKING_HOURS
+    CALC_WORKING_HOURS,
+    DISPLAY_OVERTIME_HOURS,
+    CALC_OVERTIME_HOURS
 )
 from components.molecules.functions import set_out_cell
 from components.atoms.cell_styles import (
@@ -68,8 +70,8 @@ def set_cells(
     # 実働時間合計
     out_sheet.write(37, 5, SUM_WORKING_HOURS, STYLE_BLACK_WHITE)
     # 残業時間合計
-    out_sheet.write(38, 6, SUM_OVERTIME_HOURS, STYLE_BLACK_WHITE)
-    # 日々の実働時間計算
+    out_sheet.write(37, 6, SUM_OVERTIME_HOURS, STYLE_BLACK_WHITE)
+    # 日々の実働時間
     for i, f in enumerate(DISPLAY_WORKING_HOURS):
         row = i + 6
         col = 5
@@ -77,4 +79,13 @@ def set_cells(
     for i, f in enumerate(CALC_WORKING_HOURS):
         row = i + 6
         col = 13
+        out_sheet.write(row, col, f, STYLE_WHITE_WHITE)
+    # 日々の残業時間
+    for i, f in enumerate(DISPLAY_OVERTIME_HOURS):
+        row = i + 6
+        col = 6
+        out_sheet.write(row, col, f, STYLE_BLACK_WHITE)
+    for i, f in enumerate(CALC_OVERTIME_HOURS):
+        row = i + 6
+        col = 14
         out_sheet.write(row, col, f, STYLE_WHITE_WHITE)
