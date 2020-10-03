@@ -1,10 +1,8 @@
 #!/bin/sh
 #
-# work-schedule-genディレクトリ以下（appディレクトリと同じ階層）をカレントディレクトリにしてから実行
-#
-
 # Pythonコーディング規約PEP8
 # https://pep8.readthedocs.io/en/release-1.7.x/intro.html
+#
 
 echo "全てのPythonスクリプトを整形中..."
 autopep8 --in-place --recursive --ignore errors=F401,E501 app
