@@ -6,7 +6,7 @@ from xlwt import easyxf
 
 # 黒文字,白背景のスタイル
 STYLE_BLACK_WHITE = easyxf(
-    'font: name HG正楷書体-PRO;'
+    'font: name HG正楷書体-PRO, height 220;'
     'align: vert centre, horiz center;'
     'pattern: pattern solid, fore_colour white;'
     'borders: left thin, right thin, top thin, bottom thin;'
@@ -14,7 +14,7 @@ STYLE_BLACK_WHITE = easyxf(
 
 # 黒文字,白背景のスタイル（枠線なし）
 STYLE_BLACK_WHITE_NO_BORDERS = easyxf(
-    'font: name HG正楷書体-PRO;'
+    'font: name HG正楷書体-PRO, height 220;'
     'align: vert centre, horiz center;'
     'pattern: pattern solid, fore_colour white;'
 )
@@ -29,7 +29,7 @@ STYLE_BLACK_WHITE_BIGGER = easyxf(
 
 # 黒文字,灰色背景のスタイル
 STYLE_BLACK_GREY = easyxf(
-    'font: name HG正楷書体-PRO;'
+    'font: name HG正楷書体-PRO, height 220;'
     'align: vert centre, horiz center;'
     'pattern: pattern solid, fore_colour grey25;'
     'borders: left thin, right thin, top thin, bottom thin;'
@@ -37,7 +37,7 @@ STYLE_BLACK_GREY = easyxf(
 
 # 青文字,灰色背景のスタイル
 STYLE_BLUE_GREY = easyxf(
-    'font: name HG正楷書体-PRO, colour blue;'
+    'font: name HG正楷書体-PRO, colour blue, height 220;'
     'align: vert centre, horiz center;'
     'pattern: pattern solid, fore_colour grey25;'
     'borders: left thin, right thin, top thin, bottom thin;'
@@ -45,7 +45,7 @@ STYLE_BLUE_GREY = easyxf(
 
 # 赤文字,灰色背景のスタイル
 STYLE_RED_GREY = easyxf(
-    'font: name HG正楷書体-PRO, colour red;'
+    'font: name HG正楷書体-PRO, colour red, height 220;'
     'align: vert centre, horiz center;'
     'pattern: pattern solid, fore_colour grey25;'
     'borders: left thin, right thin, top thin, bottom thin;'

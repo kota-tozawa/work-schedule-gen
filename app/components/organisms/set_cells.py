@@ -13,6 +13,7 @@ from components.atoms.cell_styles import (
     STYLE_BLACK_WHITE,
     STYLE_BLACK_WHITE_NO_BORDERS,
     STYLE_BLACK_WHITE_BIGGER,
+    STYLE_BLACK_GREY,
     STYLE_BLUE_GREY,
     STYLE_RED_GREY,
     STYLE_RIGHT_BORDER,
@@ -75,7 +76,10 @@ def set_cells(
     for i, f in enumerate(DISPLAY_WORKING_HOURS):
         row = i + 6
         col = 5
-        out_sheet.write(row, col, f, STYLE_BLACK_WHITE)
+        if row in grey_row_list:
+            out_sheet.write(row, col, f, STYLE_BLACK_GREY)
+        else:
+            out_sheet.write(row, col, f, STYLE_BLACK_WHITE)
     for i, f in enumerate(CALC_WORKING_HOURS):
         row = i + 6
         col = 13
@@ -84,7 +88,10 @@ def set_cells(
     for i, f in enumerate(DISPLAY_OVERTIME_HOURS):
         row = i + 6
         col = 6
-        out_sheet.write(row, col, f, STYLE_BLACK_WHITE)
+        if row in grey_row_list:
+            out_sheet.write(row, col, f, STYLE_BLACK_GREY)
+        else:
+            out_sheet.write(row, col, f, STYLE_BLACK_WHITE)
     for i, f in enumerate(CALC_OVERTIME_HOURS):
         row = i + 6
         col = 14
