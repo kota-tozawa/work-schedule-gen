@@ -5,9 +5,9 @@ def get_last_or_first_name(last_name: bool = True) -> str:
     '''Set `last_name=False` to get first name.'''
     last_or_first_name = ''
     if last_name is True:
-        last_or_first_name = '苗字'
+        last_or_first_name = 'あなたの苗字'
     else:
-        last_or_first_name = '名前'
+        last_or_first_name = 'あなたの名前'
 
     while True:
         name = input(
