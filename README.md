@@ -10,7 +10,7 @@
 - `python main.py`
 - `exit`
 
-- `docker container cp work-schedule-app:/app/generated/. ~/`
+- `docker container cp work-schedule-app:work-schedule-gen/app/generated/. ~/`
 
 - `docker container stop work-schedule-app`
 - `docker container start work-schedule-app`
