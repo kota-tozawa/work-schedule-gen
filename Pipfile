@@ -33,6 +33,7 @@ xlrd = "*"
 xlutils = "*"
 xlwt = "*"
 zipp = "*"
+pytest-html = "*"
 
 [packages]
 jpholiday = "*"
