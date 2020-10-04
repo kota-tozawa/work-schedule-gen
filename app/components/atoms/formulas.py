@@ -26,6 +26,7 @@ for i in range(7, 38):
 DISPLAY_WORKING_HOURS = [Formula(f) for f in wh_formulas_display]
 CALC_WORKING_HOURS = [Formula(f) for f in wh_formulas_calc]
 
+# 日々の残業時間を計算するためのエクセル関数を作成
 oh_formulas_display = []
 oh_formulas_calc = []
 for i in range(7, 38):
