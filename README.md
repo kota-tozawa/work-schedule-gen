@@ -72,10 +72,10 @@ $ docker container stop work-schedule-app
 （`pyenv`, `pyenv-virtualenv`は Homebrew を用いてインストールすることもできます．）
 
 ### 注意
-下記手順では，`python 3.6.0`の仮想環境を導入します．．\
+下記手順では，`python 3.6.0`の仮想環境を導入します
 
 ### 開発環境構築手順
-1. zsh で下記を実行し，Pythonの実行環境を管理するツール「pyenv」を使えるようにする．．\
+1. zsh で下記を実行し，Pythonの実行環境を管理するツール「pyenv」を使えるようにする．\
 （普段 bash を使っているなら bash をベースに下記手順を行っても大丈夫です．）
 ```zsh
 $ git clone https://github.com/yyuu/pyenv.git ~/.pyenv

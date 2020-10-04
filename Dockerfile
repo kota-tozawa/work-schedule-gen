@@ -1,7 +1,15 @@
-FROM python:3.6-slim-buster
-WORKDIR /work-schedule-gen
-COPY . .
-RUN pip install --upgrade pip
-RUN pip install pipenv
-RUN pipenv sync
-WORKDIR /work-schedule-gen/app
+FROM python:3.6-slim
+
+ENV WORKDIR /work-schedule-gen/
+
+WORKDIR ${WORKDIR}
+
+COPY Pipfile Pipfile.lock ${WORKDIR}
+
+RUN pip install pipenv --no-cache-dir && \
+    pipenv install --system --deploy && \
+    pip uninstall -y pipenv virtualenv-clone virtualenv
+
+COPY . $WORKDIR
+
+WORKDIR ${WORKDIR}/app
