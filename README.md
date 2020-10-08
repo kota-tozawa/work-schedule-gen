@@ -63,7 +63,7 @@ $ docker container stop work-schedule-app
 ```
 ***
 
-## 開発環境構築（Mac OS X）
+## 開発環境構築（macOS Catalina）
 ### 事前にインストールしておくもの
 - Git
 - Docker
@@ -133,7 +133,8 @@ $ cd work-schedule-gen
 12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後，コマンドパレットを開き，そこに`>python`と入れ，「Python: Select Interpreter」を選択し，「Python 3.6.0 64-bit (venv_3.6.0)」を選択．
 
 ### VSCodeの拡張機能
-「Pylance」を入れる．`settings.json`に`"python.analysis.extraPaths"`を設定すればエラー`reportMissingImports`が消える．
+「Pylance」を入れる．`.vscode/settings.json`に`"python.analysis.extraPaths"`を設定すればエラー`reportMissingImports`が消える．
+
 ```json
 {
     "python.pythonPath": "your/path/to/python3.6",
