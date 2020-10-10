@@ -33,7 +33,7 @@ for i in range(7, 38):
     # TODO 時間を表示するのと計算を可能にするのがうまく両立できない
     # 現状の対応：見た目用の時間（黒文字白背景）と計算用の時間（白文字白背景）を別に用意する
     f = 'F{i}'.format(i=i)
-    oh_formula_display = 'TEXT(IF({Fi}="","",IF({Fi}>M14,{Fi}-M14,"")), "h:mm")'.format(
+    oh_formula_display = 'TEXT(IF({Fi}="","",IF(TIMEVALUE({Fi})>TIME(8,0,0),TIMEVALUE({Fi})-TIME(8,0,0),"")), "h:mm")'.format(
         Fi=f
     )
     oh_formulas_display.append(oh_formula_display)
