@@ -37,4 +37,9 @@ def test_insert_string_to_base(base_string, insert_point, insert_string, expecte
 
 @pytest.mark.parametrize(('year_month', 'expected1', 'expected2'), separate_year_month_data)
 def test_separate_year_month(year_month, expected1, expected2):
-    assert separate_year_month(year_month) == (expected1, expected2)
+    try:
+        separate_year_month(year_month)
+        assert separate_year_month(year_month) == (expected1, expected2)
+    except IndexError:
+        with expected1:
+            assert separate_year_month(year_month) is not None
