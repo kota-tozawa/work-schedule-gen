@@ -71,9 +71,6 @@ $ docker container stop work-schedule-app
 - （必要に応じて）Homebrew \
 （`pyenv`, `pyenv-virtualenv`は Homebrew を用いてインストールすることもできます．）
 
-### 注意
-下記手順では，`python 3.6.0`の仮想環境を導入します
-
 ### 開発環境構築手順
 1. zsh で下記を実行し，Pythonの実行環境を管理するツール「pyenv」を使えるようにする．\
 （普段 bash を使っているなら bash をベースに下記手順を行っても大丈夫です．）
@@ -132,15 +129,24 @@ $ cd work-schedule-gen
 ```
 12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後，コマンドパレットを開き，そこに`>python`と入れ，「Python: Select Interpreter」を選択し，「Python 3.6.0 64-bit (venv_3.6.0)」を選択．
 
-### VSCodeの拡張機能
-「Pylance」を入れる．`.vscode/settings.json`に`"python.analysis.extraPaths"`を設定すればエラー`reportMissingImports`が消える．
+## 開発におけるメモ
+### 入れるべきVSCodeの拡張機能
+- Python
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
+- Pylance
+https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
 
-```json
-{
-    "python.pythonPath": "your/path/to/python3.6",
-    "python.analysis.extraPaths": [
-        "app",
-        "components"
-    ],
-}
+### UT/IT
+```zsh
+$ cd work-schedule-gen/app
+$ python -m pytest
+```
+#### UT only
+```zsh
+$ python -m pytest -m "not integtest"
+```
+
+#### IT only
+```
+$ python -m pytest -m integtest
 ```

@@ -1,7 +1,7 @@
 {
     "python.analysis.extraPaths": [
         "app",
-        "components"
+        "components",
     ],
     "python.pythonPath": "/Users/abcde/.pyenv/versions/venv_3.6.0/bin/python",
 }
