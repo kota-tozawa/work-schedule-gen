@@ -3,7 +3,7 @@ from typing import Tuple
 import jpholiday
 
 
-def insert_string_to_base(base_string, insert_point, insert_string) -> str:
+def insert_string_to_base(base_string: str, insert_point: int, insert_string: str) -> str:
     '''e.g.) 'ABCFG', 3, 'DE' ->  'ABCDEFG' '''
     return base_string[:insert_point] + insert_string + base_string[insert_point:]
 
