@@ -17,7 +17,7 @@ from components.atoms.cell_styles import (
     STYLE_BLUE_GREY,
     STYLE_RED_GREY,
     STYLE_RIGHT_BORDER,
-    STYLE_WHITE_WHITE
+    STYLE_WHITE_WHITE,
 )
 
 

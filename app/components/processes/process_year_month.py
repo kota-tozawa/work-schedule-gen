@@ -2,7 +2,7 @@ import calendar
 from typing import Tuple
 from components.molecules.functions import (
     separate_year_month,
-    zero_padding
+    zero_padding,
 )
 from components.organisms.get_year_month import get_year_month
 
