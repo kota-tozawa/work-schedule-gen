@@ -1,15 +1,22 @@
 from datetime import datetime
 from typing import Tuple
 import jpholiday
+from components.molecules.exceptions import (
+    TooLongStringError,
+    TooShortStringError,
+)
 
 
-def insert_string_to_base(base_string, insert_point, insert_string) -> str:
+def insert_string_to_base(base_string: str, insert_point: int, insert_string: str) -> str:
     '''e.g.) 'ABCFG', 3, 'DE' ->  'ABCDEFG' '''
     return base_string[:insert_point] + insert_string + base_string[insert_point:]
 
 
 def separate_year_month(year_month: str) -> Tuple[str, str]:
     '''yyyymm -> yyyy, mm'''
+    if len(year_month) > 6:
+        raise TooLongStringError()
+
     year = year_month[0:4]
     month = ''
     if (year_month[4] == '0'):
@@ -22,17 +29,28 @@ def separate_year_month(year_month: str) -> Tuple[str, str]:
 
 def zero_padding(value: str) -> str:
     '''e.g.) 7 -> 07, 19 -> 19'''
+    if len(value) > 2:
+        raise TooLongStringError()
     return '0' + value if len(value) == 1 else value
 
 
 def to_year_month_day(year: str, month_padded: str, day_padded: str) -> str:
     '''yyyy, mm, dd -> yyyymmdd'''
+    if len(year) > 4 or len(month_padded) > 2 or len(day_padded) > 2:
+        raise TooLongStringError()
+    elif len(year) < 4 or len(month_padded) < 2 or len(day_padded) < 2:
+        raise TooShortStringError()
 
     return year + month_padded + day_padded
 
 
 def is_holiday(str_date: str) -> bool:
     '''Determines if yyyymmdd is a holiday or not'''
+    if len(str_date) > 8:
+        raise TooLongStringError()
+    elif len(str_date) < 8:
+        raise TooShortStringError()
+
     date = datetime.strptime(str_date, '%Y%m%d')
     if date.weekday() >= 5 or jpholiday.is_holiday(date):
         return True

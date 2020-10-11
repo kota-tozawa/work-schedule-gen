@@ -3,7 +3,7 @@ from components.molecules.classes import Date
 from components.molecules.functions import (
     zero_padding,
     to_year_month_day,
-    is_holiday
+    is_holiday,
 )
 
 

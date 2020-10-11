@@ -4,6 +4,7 @@ from xlwt import easyxf
 # xlwtで使用可能な色の一覧
 # https://docs.google.com/spreadsheets/d/1ihNaZcUh7961yU7db1-Db0lbws4NT24B7koY8v8GHNQ/pubhtml?gid=1072579560&single=true
 
+# TODO template.xlsの背景色の灰色が再現できない。一番近いgrey25で代用
 # 黒文字,白背景のスタイル
 STYLE_BLACK_WHITE = easyxf(
     'font: name HG正楷書体-PRO, height 220;'

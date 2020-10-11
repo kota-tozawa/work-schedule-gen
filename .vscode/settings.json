@@ -1,0 +1,7 @@
+{
+    "python.analysis.extraPaths": [
+        "app",
+        "components",
+    ],
+    // "python.pythonPath": "/Path/to/.pyenv/versions/venv_3.6.2/bin/python",
+}
