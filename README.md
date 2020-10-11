@@ -87,15 +87,15 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 ```
 eval "$(pyenv init -)"
 ```
-4. 仮想環境用の python 3.6.0 をインストール．（使用するライブラリの関係上 python 3.6.0 を用います．）
+4. 仮想環境用の python 3.6.2 をインストール．（使用するライブラリの関係上 python 3.6.2 を用います．）
 ```zsh
-$ pyenv install 3.6.0
+$ pyenv install 3.6.2
 ```
 #### インストール中に`Ignoring ensurepip failure: pip 7.1.2 requires SSL/TLS`というエラーが発生したら
 下記を実行してください：
 ```zsh
 $ brew uninstall --ignore-dependencies openssl@1.1
-$ pyenv install 3.6.0
+$ pyenv install 3.6.2
 ```
 5. 下記を実行し，pyenv のプラグイン pyenv-virtualenv を使えるようにする．
 ```zsh
@@ -107,13 +107,13 @@ eval "$(pyenv virtualenv-init -)"
 ```
 7. 仮想環境の作成．
 ```zsh
-$ pyenv virtualenv 3.6.0 venv_3.6.0
+$ pyenv virtualenv 3.6.2 venv_3.6.2
 ```
-8. 仮想環境をアクティベート（ディアクティベート：`$ pyenv deactivate venv_3.6.0`）．
+8. 仮想環境をアクティベート（ディアクティベート：`$ pyenv deactivate venv_3.6.2`）．
 ```zsh
-$ pyenv activate venv_3.6.0
+$ pyenv activate venv_3.6.2
 ```
-9. バージョンが`3.6.0`に切り替わったか確認．
+9. バージョンが`3.6.2`に切り替わったか確認．
 ```zsh
 $ python --version
 ```
@@ -127,7 +127,7 @@ $ pipenv install --dev
 $ git clone https://github.com/kota-tozawa/work-schedule-gen.git
 $ cd work-schedule-gen
 ```
-12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後，コマンドパレットを開き，そこに`>python`と入れ，「Python: Select Interpreter」を選択し，「Python 3.6.0 64-bit (venv_3.6.0)」を選択．
+12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後，コマンドパレットを開き，そこに`>python`と入れ，「Python: Select Interpreter」を選択し，「Python 3.6.2 64-bit (venv_3.6.2)」を選択．
 
 ## メモ
 ### 入れるべきVSCodeの拡張機能
@@ -147,6 +147,6 @@ $ python -m pytest -m "not integtest"
 ```
 
 #### IT only
-```
+```zsh
 $ python -m pytest -m integtest
 ```
