@@ -129,7 +129,7 @@ $ cd work-schedule-gen
 ```
 12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後，コマンドパレットを開き，そこに`>python`と入れ，「Python: Select Interpreter」を選択し，「Python 3.6.0 64-bit (venv_3.6.0)」を選択．
 
-## 開発におけるメモ
+## メモ
 ### 入れるべきVSCodeの拡張機能
 - Python
 https://marketplace.visualstudio.com/items?itemName=ms-python.python
