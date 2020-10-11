@@ -81,10 +81,10 @@ def test_separate_year_month(year_month, expected1, expected2):
         assert separate_year_month(year_month) == (expected1, expected2)
     except IndexError:
         with expected1:
-            assert separate_year_month(year_month) is not None
+            assert separate_year_month(year_month)
     except TooLongStringError:
         with expected1:
-            assert separate_year_month(year_month) is not None
+            assert separate_year_month(year_month)
 
 
 @pytest.mark.parametrize(('value', 'expected'), zero_padding_data)
@@ -94,7 +94,7 @@ def test_zero_pading(value, expected):
         assert zero_padding(value) == expected
     except TooLongStringError:
         with expected:
-            assert zero_padding(value) is not None
+            assert zero_padding(value)
 
 
 @pytest.mark.parametrize(('year', 'month_padded', 'day_padded', 'expected'), to_year_month_day_data)
@@ -105,11 +105,11 @@ def test_to_year_month_day(year, month_padded, day_padded, expected):
     except TooShortStringError:
         with expected:
             assert to_year_month_day(
-                year, month_padded, day_padded) is not None
+                year, month_padded, day_padded)
     except TooLongStringError:
         with expected:
             assert to_year_month_day(
-                year, month_padded, day_padded) is not None
+                year, month_padded, day_padded)
 
 
 @pytest.mark.parametrize(('str_date', 'expected'), is_holiday_data)
@@ -119,7 +119,7 @@ def test_is_holiday(str_date, expected):
         assert is_holiday(str_date) == expected
     except TooShortStringError:
         with expected:
-            assert is_holiday(str_date) is not None
+            assert is_holiday(str_date)
     except TooLongStringError:
         with expected:
-            assert is_holiday(str_date) is not None
+            assert is_holiday(str_date)
