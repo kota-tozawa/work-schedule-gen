@@ -3,5 +3,5 @@
         "app",
         "components",
     ],
-    "python.pythonPath": "/Users/abcde/.pyenv/versions/venv_3.6.2/bin/python",
+    // "python.pythonPath": "/Path/to/.pyenv/versions/venv_3.6.2/bin/python",
 }
