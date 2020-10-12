@@ -109,32 +109,41 @@ eval "$(pyenv virtualenv-init -)"
 ```zsh
 $ pyenv virtualenv 3.6.2 venv_3.6.2
 ```
-8. 仮想環境をアクティベート（ディアクティベート：`$ pyenv deactivate venv_3.6.2`）．
-```zsh
-$ pyenv activate venv_3.6.2
-```
-9. バージョンが`3.6.2`に切り替わったか確認．
-```zsh
-$ python --version
-```
-10. 勤務表生成に必要なパッケージをインストール．
-```zsh
-$ pip install pipenv
-$ pipenv install --dev
-```
-11. 下記を実行しレポジトリをクローンする．
+8. 下記を実行しwork-schedule-genレポジトリをクローンする．
 ```zsh
 $ git clone https://github.com/kota-tozawa/work-schedule-gen.git
 $ cd work-schedule-gen
 ```
+9. 仮想環境をアクティベート（ディアクティベート：`$ pyenv deactivate venv_3.6.2`）．
+```zsh
+$ pyenv activate venv_3.6.2
+```
+10. バージョンが`3.6.2`に切り替わったか確認．
+```zsh
+$ python --version
+```
+11. 開発に必要なパッケージをインストール．
+```zsh
+$ pip install pipenv
+$ pipenv install --dev
+```
 12. VSCodeで「フォルダを開く」でクローンしたディレクトリを開いた後，コマンドパレットを開き，そこに`>python`と入れ，「Python: Select Interpreter」を選択し，「Python 3.6.2 64-bit (venv_3.6.2)」を選択．
 
 ## メモ
-### 入れるべきVSCodeの拡張機能
+### VSCodeの拡張機能・設定
 - Python
 https://marketplace.visualstudio.com/items?itemName=ms-python.python
 - Pylance
 https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+- flake8導入
+https://qiita.com/psychoroid/items/2c2acc06c900d2c0c8cb
+
+### lint実施
+```zsh
+$ cd work-schedule-gen
+$ chmod +x ./lint.sh
+$ ./lint.sh
+```
 
 ### UT/IT
 ```zsh
@@ -145,8 +154,15 @@ $ python -m pytest
 ```zsh
 $ python -m pytest -m "not integtest"
 ```
-
 #### IT only
 ```zsh
 $ python -m pytest -m integtest
+```
+#### レポート生成（テスト結果のレポートとカバリッジレポート）
+1. `gen_test_reports.sh`の`PYTHONPATH`に記載を自分の環境に合わせる．
+2. 下記を実行．
+```zsh
+$ cd work-schedule-gen
+$ chmod +x ./gen_test_reports.sh
+$ ./gen_test_reports.sh
 ```
