@@ -5,8 +5,7 @@
 #
 
 echo "全てのPythonスクリプトを整形中..."
-autopep8 --in-place --recursive --ignore errors=F401,E501 app
-autopep8 --in-place --recursive --select=E226,E24 app
+autopep8 --in-place --recursive --select=E226,E24 --ignore errors=F401,E501 app
 echo "整形が完了しました。"
 
 echo "全てのPythonスクリプトのフォーマットの問題点を検出中..."
