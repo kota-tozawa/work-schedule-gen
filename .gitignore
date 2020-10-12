@@ -93,7 +93,6 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 .tox/
 .nox/
-.coverage
 .coverage.*
 .cache
 nosetests.xml

@@ -34,7 +34,7 @@ class TestDate:
 
     # Test holiday_flg
     def test_holiday_flg_normal(self):
-        assert bool(Date(20, '木', True).holiday_flg) is True
+        assert Date(20, '木', True).holiday_flg is True
 
     def test_holiday_flg_none(self):
         with pytest.raises(TypeError):
