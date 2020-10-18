@@ -1,12 +1,6 @@
 #!/bin/sh
-#
-# PYTHONPATHを設定しないと, カバレッジレポート作成時に「no module named ~」エラーにが出る．
-# このシェルスクリプトを実行する際には，下記のPYTHONPATHのところのコメントアウトを外したのち，自分の環境に合うようパスを修正してください．
-#
 
-# export PYTHONPATH="${PYTHONPATH}:/Your/path/to/work-schedule-gen/app/components"
-
-rm -r ./docs/*
+rm -rf ./docs/*
 
 echo "テスト結果レポート生成中..."
 cd app
