@@ -159,7 +159,11 @@ $ python -m pytest -m "not integtest"
 $ python -m pytest -m integtest
 ```
 #### レポート生成（テスト結果のレポートとカバリッジレポート）
-1. `gen_test_reports.sh`の`PYTHONPATH`に記載を自分の環境に合わせる．
+1. `# PYTHONPATHを設定しないと，カバレッジレポート作成時に「no module named ~」エラーが出る．\
+なので，このシェルスクリプトを実行する際には，事前に自分の環境に合うように下記PYTHONPATHを修正し，`.zshrc`や`.bashrc`などのファイルに追記．
+```zsh
+export PYTHONPATH="${PYTHONPATH}:/Users/abcde/ドキュメント/work-schedule-gen/app/components"
+```
 2. 下記を実行．
 ```zsh
 $ cd work-schedule-gen
