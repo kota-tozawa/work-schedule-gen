@@ -11,16 +11,14 @@ wh_formulas_calc = []
 for i in range(7, 38):
     # TODO 時間を表示するのと計算を可能にするのがうまく両立できない
     # 現状の対応：見た目用の時間（黒文字白背景）と計算用の時間（白文字白背景）を別に用意する
-    c = 'C{i}'.format(i=i)
-    d = 'D{i}'.format(i=i)
-    e = 'E{i}'.format(i=i)
-    wh_formula_display = 'TEXT(IF(OR({Ci}="", {Di}=""), "", {Di}-{Ci}-{Ei}), "h:mm")'.format(
-        Ci=c, Di=d, Ei=e
-    )
+    c = f'C{i}'
+    d = f'D{i}'
+    e = f'E{i}'
+    wh_formula_display = f'TEXT(IF(OR({c}="", {d}=""), "", {d}-{c}-{e}), "h:mm")'
     wh_formulas_display.append(wh_formula_display)
 
-    f = 'F{i}'.format(i=i)
-    wh_formula_calc = 'IF({Fi}="", 0, VALUE({Fi}))'.format(Fi=f)
+    f = f'F{i}'
+    wh_formula_calc = f'IF({f}="", 0, VALUE({f}))'
     wh_formulas_calc.append(wh_formula_calc)
 
 DISPLAY_WORKING_HOURS = [Formula(f) for f in wh_formulas_display]
@@ -32,14 +30,12 @@ oh_formulas_calc = []
 for i in range(7, 38):
     # TODO 時間を表示するのと計算を可能にするのがうまく両立できない
     # 現状の対応：見た目用の時間（黒文字白背景）と計算用の時間（白文字白背景）を別に用意する
-    f = 'F{i}'.format(i=i)
-    oh_formula_display = 'TEXT(IF({Fi}="","",IF(TIMEVALUE({Fi})>TIME(8,0,0),TIMEVALUE({Fi})-TIME(8,0,0),"")), "h:mm")'.format(
-        Fi=f
-    )
+    f = f'F{i}'
+    oh_formula_display = f'TEXT(IF({f}="","",IF(TIMEVALUE({f})>TIME(8,0,0),TIMEVALUE({f})-TIME(8,0,0),"")), "h:mm")'
     oh_formulas_display.append(oh_formula_display)
 
-    g = 'G{i}'.format(i=i)
-    oh_formula_calc = 'IF({Gi}="", 0, VALUE({Gi}))'.format(Gi=g)
+    g = f'G{i}'
+    oh_formula_calc = f'IF({g}="", 0, VALUE({g}))'
     oh_formulas_calc.append(oh_formula_calc)
 
 DISPLAY_OVERTIME_HOURS = [Formula(f) for f in oh_formulas_display]

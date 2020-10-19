@@ -33,8 +33,7 @@ def set_cells(
     set_out_cell(out_sheet, 0, 0, tmp_year_month_day)
 
     # 氏名をセット
-    out_sheet.write(2, 7, '氏名：{full_name}'.format(
-        full_name=full_name), STYLE_BLACK_WHITE_NO_BORDERS)
+    out_sheet.write(2, 7, f'氏名：{full_name}', STYLE_BLACK_WHITE_NO_BORDERS)
 
     # 日付・曜日をセット
     grey_row_list = []

@@ -11,20 +11,14 @@ def get_last_or_first_name(last_name: bool = True) -> str:
 
     while True:
         name = input(
-            '{last_or_first_name}を入力してください：'.format(
-                last_or_first_name=last_or_first_name
-            )
+            f'{last_or_first_name}を入力してください：'
         )
         if (name == ''):
             print(
-                '{last_or_first_name}が未入力です。'.format(
-                    last_or_first_name=last_or_first_name
-                )
+                f'{last_or_first_name}が未入力です。'
             )
             y_or_n = input(
-                '{last_or_first_name}を再入力しますか？[y/n]：'.format(
-                    last_or_first_name=last_or_first_name
-                )
+                f'{last_or_first_name}を再入力しますか？[y/n]：'
             )
             if (y_or_n == 'n'):
                 sys.exit()

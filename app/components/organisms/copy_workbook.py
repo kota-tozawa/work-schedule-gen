@@ -9,8 +9,7 @@ def copy_workbook(year: str, month_padded: str):
         formatting_info=True,
         on_demand=True
     )
-    wb.get_sheet(0).name = u'【勤務表】{year}.{month}'.format(
-        year=year, month=month_padded)
+    wb.get_sheet(0).name = f'【勤務表】{year}.{month_padded}'
     wb_copy = copy(wb)
 
     return wb_copy
