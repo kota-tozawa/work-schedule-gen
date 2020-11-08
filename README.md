@@ -1,3 +1,6 @@
+# work-schedule-gen
+勤務表生成する仕組み
+
 ## 生成手順（初回）
 1. Dockerをインストール．
 https://docs.docker.com/get-docker/
