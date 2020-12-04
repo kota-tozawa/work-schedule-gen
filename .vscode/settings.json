@@ -1,7 +1,20 @@
 {
-    "python.analysis.extraPaths": [
-        "app",
-        "components",
-    ],
-    // "python.pythonPath": "/Your/Path/to/.pyenv/versions/venv_3.6.2/bin/python",
+  "editor.formatOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Args": [
+      "--ignore=E501,F401",
+  ],
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": [
+      "--ignore=E501,F401",
+      "--aggressive",
+      "--aggressive",
+  ],
+  "python.analysis.extraPaths": [
+      "app",
+      "components",
+  ],
+  // "python.pythonPath": "/Your/Path/to/.pyenv/versions/venv_3.6.2/bin/python",
 }

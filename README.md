@@ -138,10 +138,10 @@ $ pipenv install --dev
 https://marketplace.visualstudio.com/items?itemName=ms-python.python
 - Pylance
 https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
-- flake8導入
+- flake8 / autopep8 導入
 https://qiita.com/psychoroid/items/2c2acc06c900d2c0c8cb
 
-### lint実施
+### Pythonコードのリント・フォーマット
 ```zsh
 $ cd work-schedule-gen
 $ chmod +x ./lint.sh
