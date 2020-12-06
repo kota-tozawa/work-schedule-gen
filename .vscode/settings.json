@@ -1,4 +1,5 @@
 {
+  "python.analysis.typeCheckingMode": "basic",
   "editor.formatOnSave": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
@@ -16,5 +17,5 @@
       "app",
       "components",
   ],
-  // "python.pythonPath": "/Your/Path/to/.pyenv/versions/venv_3.6.2/bin/python",
+  "python.pythonPath": "/Your/Path/to/.pyenv/versions/venv_3.6.2/bin/python",
 }
